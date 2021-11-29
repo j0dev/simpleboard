@@ -32,7 +32,7 @@ public class Board {
     private User user;      // writer
 
     @Enumerated(EnumType.STRING)
-    BoardType boardType;        // board type (enum: PUBLIC, PRIVATE)
+    BoardStatus boardStatus;        // board type (enum: PUBLIC, PRIVATE)
 
     @NotBlank
     @Size(max = 128)
@@ -54,11 +54,11 @@ public class Board {
     private List<Comment> comment;
 
     @Builder
-    public Board(User user, String title, String content, BoardType boardType) {
+    public Board(User user, String title, String content, BoardStatus boardStatus) {
         this.user = user;
         this.title = title;
         this.content = content;
-        this.boardType = boardType;
+        this.boardStatus = boardStatus;
     }
 
 }
